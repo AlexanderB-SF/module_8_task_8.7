@@ -1,0 +1,71 @@
+.game-card {
+    height: 100vh;
+    font-family: 'Open Sans', monospace;
+}
+
+.card-win {
+    background-color: rgb(132, 252, 162);
+}
+.card-gover {
+    background-color: rgb(255, 130, 130);
+}
+.wrappp {
+    position: absolute;
+    height: 417px;
+    width: 365px;
+    position: relative;
+}
+
+.back {
+    height: 417px;
+    width: 365px;
+    position: absolute;
+    transition: transform .6s linear;
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.back-active {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.front {
+    position: absolute;
+    top: 0;
+    width: 365px;
+    height: 417px;
+    font-size: 18px;
+    font-weight: 500;
+    backface-visibility: hidden;
+    transition: transform .6s linear;
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.front-active {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.front p {
+    margin: 0;
+    padding: 0;
+}
+
+.front input {
+    padding: 10px;
+    color: rgb(70, 70, 70);
+}
+
+.front input:focus {
+    outline: none;
+}
+
+#min-value {
+    margin-bottom: 10px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+}
+#btnSucces {
+    margin-right: 10px;
+}
