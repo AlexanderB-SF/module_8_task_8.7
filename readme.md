@@ -1,1 +1,1 @@
-#[Ссылка на задание](https://alexanderb-sf.github.io/module_6_task_6.8/)
+[#Ссылка на задание](https://alexanderb-sf.github.io/module_8_task_8.7/)
