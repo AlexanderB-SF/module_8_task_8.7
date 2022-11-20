@@ -16,6 +16,15 @@
     position: relative;
 }
 
+.text-min-max {
+    position: absolute;
+    top: -40px;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: all .6s linear;
+}
+
 .back {
     height: 417px;
     width: 365px;

@@ -1,8 +1,8 @@
 
 let bgc = document.querySelector('.back');
 let front = document.querySelector('.front');
-
 let minValue, maxValue, minb, maxb, answerNumber;
+let textMinMax = document.querySelector('.text-min-max');
 const btnSucces = document.querySelector('#btnSucces'), min = -999, max = 999;
 
 // Форма ввода чисел
@@ -44,6 +44,8 @@ btnSucces.addEventListener('click', (e) => {
     }
 
     orderNumberField.innerText = orderNumber;
+
+    textMinMax.innerText = `загаданно число от: ${minValue} до: ${maxValue}`;
 });
 
 let orderNumber = 1;
@@ -57,17 +59,16 @@ let phrase = function() {return Math.floor(Math.random() * 3);};
 const orderNumberField = document.getElementById('orderNumberField');
 const answerField = document.getElementById('answerField');
 
-
 // Кнопка заново
 document.getElementById('btnRetry').addEventListener('click', function (e) {
     orderNumber = 1;
     bgc.classList.remove('card-win', 'card-gover');
     minInp.value = '';
     maxInp.value = '';
-
     front.classList.remove('front-active');
     bgc.classList.remove('back-active');
-    
+    textMinMax.innerText = ``;
+    console.log(textMinMax);
     gameRun = true;
 });
 
