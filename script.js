@@ -2,9 +2,8 @@
 let bgc = document.querySelector('.back');
 let front = document.querySelector('.front');
 
-let minValue, maxValue, minb, maxb;
-const btnSucces = document.querySelector('#btnSucces');
-let answerNumber;
+let minValue, maxValue, minb, maxb, answerNumber;
+const btnSucces = document.querySelector('#btnSucces'), min = -999, max = 999;
 
 // Форма ввода чисел
 btnSucces.addEventListener('click', (e) => {
@@ -14,22 +13,25 @@ btnSucces.addEventListener('click', (e) => {
     minValue = parseInt(minInp.value);
     maxValue = parseInt(maxInp.value);
 
-    if (isNaN(minValue) || isNaN(maxValue)) {
-        console.log("не введено");
-    }else {
+    // Определение введенных данных как число или нет
+    if (Number.isNaN(minValue) || Number.isNaN(maxValue)) {
+        // Если нет, присвиваем значения по умолчанию, которые генерируются Math.random
+        console.log("Значения по умолчанию");
+        if (Number.isNaN(minValue)) {
+            minValue = -Math.floor(Math.random() * 1000);
+        }
+        if (Number.isNaN(maxValue)) {
+            maxValue = Math.floor(Math.random() * 1000);
+        }
+        front.classList.add('front-active');
+        bgc.classList.add('back-active');
+
+        console.log(`minValue: ${minValue}, maxValue: ${maxValue}`);
+    } else {
         front.classList.add('front-active');
         bgc.classList.add('back-active');
     }
 
-    if (Number.isNaN(minValue) || Number.isNaN(maxValue)) {
-        if (Number.isNaN(minValue)) {
-            minValue = -999;
-        }
-        if (Number.isNaN(maxValue)) {
-            maxValue = 999;
-        }
-    }
-    
     minValue < -999 ? minValue = -999 : minValue;
     maxValue > 999 ? maxValue = 999 : maxValue;
 
