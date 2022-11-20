@@ -96,7 +96,7 @@ document.getElementById('btnOver').addEventListener('click', function () {
 // Кнопка меньше
 document.getElementById('btnLess').addEventListener('click', function () {
     if (gameRun){
-        if (minValue === maxValue){
+        if (minValue === answerNumber) {
             const answerPhrase = (phrase() === 1) ?
                 `Вы загадали неправильное число!\n\u{1F914}` :
                 `Я сдаюсь..\n\u{1F92F}`;
@@ -109,7 +109,7 @@ document.getElementById('btnLess').addEventListener('click', function () {
             orderNumber++;
             orderNumberField.innerText = orderNumber;
             if (generatePhrase(answerNumber).length <= 20) {
-                answerField.innerText = `${question[phrase()]}  ${generatePhrase(answerNumber)}`;
+                answerField.innerText = `${question[phrase()]} ${generatePhrase(answerNumber)}`;
             } else {
                 answerField.innerText = `${question[phrase()]} ${answerNumber }?`;
             }
